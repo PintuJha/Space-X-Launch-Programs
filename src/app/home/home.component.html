@@ -1,0 +1,75 @@
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="main_filter_heading">
+          <p><b>Filter</b></p>
+          <p class="main_txt">launch Year</p>
+          <div class=" text-center mb-3 mt-3 clear_btn">
+          <button type="button" class="btn btn-primary" (click)="clearall()">Clear All</button>
+        </div>
+          <div class="row">
+            <div class="col-md-6 col-6" *ngFor="let year of yeararray">
+              <div class="ac_btn">
+                <button type="button" class="btn btn-primary1" (click)="setInput(year)" >{{year}}</button>
+              </div>
+            </div>
+           
+          </div>
+
+
+          <div class="Successfull_lad1">
+            <p class="main_txt">Successfull Launch</p>
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <div class="ac_btn1">
+                  <button type="button" class="btn btn-primary12">True</button>
+                </div>
+              </div>
+              <div class="col-md-6 col-6">
+                <div class="ac_btn1">
+                  <button type="button" class="btn btn-primary12">False</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="Successfull_lad">
+            <p class="main_txt">Successfull Landing</p>
+            <div class="row">
+              <div class="col-md-6 col-6">
+                <div class="ac_btn1">
+                  <button type="button" class="btn btn-primary12">True</button>
+                </div>
+              </div>
+              <div class="col-md-6 col-6">
+                <div class="ac_btn1">
+                  <button type="button" class="btn btn-primary12">False</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-3 main_res mb-3" *ngFor="let product of products">
+            <div class="card">
+              <div class="card-body">
+                <img class="card-img-top" src="{{product.links.mission_patch_small}}" alt="Card image cap">
+                <p class="h_main"><b>{{product.mission_name}} <span>#{{product.flight_number}}</span></b></p>
+                <p><b>mission_id: {{product.mission_id}}</b><br>
+                  <span>. list Mission Ids </span></p>
+                <p><b>launch_year: <span>{{product.launch_year}}</span></b></p>
+                <p><b>Successfull launch: <span>{{product.launch_success}}</span></b></p>
+                <p><b>Successfull <br>landing: <span>{{product.land_success}}</span> <span class="spac">launch_lading</span></b></p>
+           </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
